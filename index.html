@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<link href="main.css" rel="stylesheet">
+
+	<title>Hello, world!</title>
+</head>
+
+<body>
+
+	<div class="black-background" id="modal">
+		<div class="white-background">
+			<h4 id="title">모달창 제목</h4>
+			<form action="login.php" onsubmit="return 미지의함수()">
+				<div class="form-group mt-3">
+					<input type="email" id="email" class="form-control" placeholder="Enter email">
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control" placeholder="Password">
+				</div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+				<button class="btn btn-danger" id="close">닫기</button>
+			</form>
+		</div>
+	</div>
+
+	<script>
+		
+		document.querySelector('.black-background').addEventListener('click', function(e){
+			
+			e.target;   //지금 실제 클릭한거 
+			e.currentTarget;  //지금 이벤트 달린곳(지금동작하는곳)
+			this;
+			e.preventDefault();  //기본동작막기
+			e.stopPropagation();  //내 상위요소로 진행되는 이벤트버블링 막기
+			
+			if (e.target == document.querySelector('.black-background') ) {
+				document.getElementById('modal').style.display = 'none';
+			}
+			
+		});
+		
+		
+		//		정규식 regular expression 
+		//		
+		//		'sdcdcs@naver.com' 
+		//		
+		//		var 정규식 = /\S+@\S+\.\S+/
+		//			
+		//		정규식.test('sdcdcs@naver.com') 
+
+
+		function 미지의함수() {
+
+			if (document.getElementById('email').value == "") {
+				return false
+			}
+
+		}
+
+
+		//클릭이 일어나면 안에 코드를 실행해주세요 
+		document.getElementById('close').addEventListener('click', function() {
+
+			document.getElementById('modal').style.display = 'none';
+
+		});
+	</script>
+
+
+
+
+
+
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">DressShop</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Link</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Products
+        </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Action</a>
+						<a class="dropdown-item" href="#">Another action</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">Something else here</a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+
+	<div class="jumbotron main-background">
+		<h2 class="display-4">20% Season OFF</h2>
+		<p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+		<hr class="my-4">
+		<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+		<a onclick="모달창열기('로그인하세요');" class="btn btn-primary btn-lg" href="#" role="button">Log in</a>
+		<a onclick="모달창열기('가입하세요');" class="btn btn-primary btn-lg" href="#" role="button">가입하기</a>
+	</div>
+
+	<script>
+		//1. 긴코드 한단어로 축약
+		function 모달창열기(제목) {
+			document.getElementById('modal').style.display = 'block';
+			document.getElementById('title').innerHTML = 제목;
+
+		}
+
+
+		//2. 구멍뚫기 (파라미터)
+
+
+		//if 조건문
+
+		if (3 == 1) {
+			console.log('네')
+		} else {
+			console.log('아니요');
+		}
+
+		//3. 퉤 뱉어내기  
+		function 더하기(구멍) {
+			return 1 + 구멍
+		}
+
+		더하기(10);
+
+
+
+		var 오늘점심값 = 8000;
+
+		function 법카결제() {
+
+			if (오늘점심값 < 6000) {
+				return '승인'
+			} else {
+				return '거절'
+			}
+		}
+
+
+		var 차 = 'K5';
+		var 차색상 = 'white';
+		var 차연식 = 2015;
+
+		//array 
+		var car = ['K5', 'white', 2015];
+		car[0];
+
+		//object 
+		var car2 = {
+			name: 'K5',
+			color: 'white',
+			year: 2015
+		}
+
+		car2.name;
+		car2['name'];
+	</script>
+
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="card">
+					<img src="img/pic1.jpg" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">Some quick example text</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card">
+					<img src="img/pic2.jpg" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">Some quick example text</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card">
+					<img src="img/pic3.jpg" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">Some quick example text</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		var products = [{
+				id: 1,
+				price: 299,
+				img: 'img/pic1.jpg',
+				title: 'Blossom Dress',
+				text: "Do you like some random yellow stuff? Here's one for you."
+			},
+			{
+				id: 2,
+				price: 199,
+				img: 'img/pic1.jpg',
+				title: 'Springfield Shirt',
+				text: "Stole it from my dad."
+			},
+			{
+				id: 3,
+				price: 399,
+				img: 'img/pic3.jpg',
+				title: 'Black Monastery',
+				text: "The best beer comes from the monastery."
+			}
+		];
+		
+		
+		products.sort(function(a,b){
+			return a.price - b.price
+		});
+		
+		
+		//document.getElementById('').innerHTML = products[0].title;
+		
+		document.getElementsByClassName('card-title')[0].innerHTML = products[0].title;
+		
+		//맨위에있는 하나만 찾음 
+		//document.querySelector('.card-title').innerHTML = ?;
+		
+		//다찾음, 근데 순서까지 지정해줘야함 
+		//document.querySelectorAll('.card-title')[2].innerHTML = ?;
+
+		
+		var 어레이 = [5,3,20,4,1];
+		어레이.sort(function(a,b){
+			return a - b
+		});
+		
+		
+		var 어레이2 = ['ㄴ', 'ㄱ', 'ㄷ'];
+		어레이2.sort();
+				
+//		+ -> b을 왼쪽으로 
+//		- -> b를 오른쪽으로 
+		
+		
+		var 어레이 = [5,3,20,4,1];
+		
+	  var 뉴어레이 = 어레이.filter(a => a > 3);
+		
+		var 뉴어레이 = 어레이.map(function(a){
+			return a * 1180
+		});
+		
+		
+	</script>
+
+
+
+
+
+
+
+
+
+	<h4 id="car-title">차모델명</h4>
+	<p>차색상</p>
+
+	<script>
+		var 데이터 = [{
+				carName: 'K5',
+				carColor: 'white'
+			},
+			{
+				carName: 'Sonata',
+				carColor: 'black'
+			}
+		]
+
+		document.getElementById('car-title').innerHTML = 데이터[0].carName;
+	</script>
+
+
+
+
+
+
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
